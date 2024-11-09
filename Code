@@ -1,0 +1,54 @@
+// Define pins for RGB LED
+const int redPin = 9;
+const int greenPin = 10;
+const int bluePin = 11;
+
+void setup() {
+  // Set pins as output
+  pinMode(redPin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
+  pinMode(bluePin, OUTPUT);
+}
+
+void loop() {
+  // Example color sequence: red, green, blue, yellow, cyan, purple, white, off
+
+  // Red
+  setColor(255, 0, 0);
+  delay(1000);
+  
+  // Green
+  setColor(0, 255, 0);
+  delay(1000);
+  
+  // Blue
+  setColor(0, 0, 255);
+  delay(1000);
+  
+  // Yellow (red + green)
+  setColor(255, 255, 0);
+  delay(1000);
+  
+  // Cyan (green + blue)
+  setColor(0, 255, 255);
+  delay(1000);
+  
+  // Purple (red + blue)
+  setColor(255, 0, 255);
+  delay(1000);
+  
+  // White (red + green + blue)
+  setColor(255, 255, 255);
+  delay(1000);
+  
+  // Off
+  setColor(0, 0, 0);
+  delay(0);
+}
+
+// Function to set the color of the RGB LED
+void setColor(int redValue, int greenValue, int blueValue) {
+  analogWrite(redPin, redValue);
+  analogWrite(greenPin, greenValue);
+  analogWrite(bluePin, blueValue);
+}
